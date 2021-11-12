@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Кнопки.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Control.gd" type="Script" id=2]
+[ext_resource path="res://Audio/TremLoadingloopl.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/click_butt.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Resources/settings.png" type="Texture" id=5]
+[ext_resource path="res://Screnes/settinds.tscn" type="PackedScene" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Go Game" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 176.0
+margin_right = 264.0
+margin_bottom = 216.0
+rect_scale = Vector2( 0.86318, 0.828268 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingB" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_top = 240.0
+margin_right = 264.0
+margin_bottom = 280.0
+rect_scale = Vector2( 0.86318, 0.828268 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Setting" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[connection signal="button_down" from="Go Game" to="." method="_on_Go_Game_button_down"]
+[connection signal="button_down" from="SettingB" to="." method="_on_SettingB_button_down"]
