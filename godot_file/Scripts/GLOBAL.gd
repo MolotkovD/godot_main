@@ -1,4 +1,6 @@
 extends Node
 
-
-var vol_music = 0
+var seed_
+var my_id_net = -1
+var ids = []
+var player = []

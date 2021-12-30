@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="positions_player" type="Node2D"]
+
+[node name="1" type="Position2D" parent="."]
+position = Vector2( -8, -8 )
+
+[node name="2" type="Position2D" parent="."]
+position = Vector2( 8, 8 )
+
+[node name="3" type="Position2D" parent="."]
+position = Vector2( 8, -8 )
+
+[node name="4" type="Position2D" parent="."]
+position = Vector2( -8, 8 )
